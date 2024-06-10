@@ -25,7 +25,7 @@ const Modal = ({edit,setEdit}) => {
   return (
     <>
      
-     <div className="modal_wrapper" onClick={()=>setEdit(null)} >
+     <div className="modal_wrapper" onClick={()=>setEdit(null)} ></div>
         <div className="modal">
           <form onSubmit={(e)=>handleEdit(edit.id)}>
             <div className="form-group">
@@ -50,7 +50,7 @@ const Modal = ({edit,setEdit}) => {
           </form>
         </div>
       
-</div>
+
     </>
   );
 };
