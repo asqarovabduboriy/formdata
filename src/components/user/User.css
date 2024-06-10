@@ -50,3 +50,29 @@
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
+
+.form-group_user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.form-group_user select{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+}
+
+.form-group_user option{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+}

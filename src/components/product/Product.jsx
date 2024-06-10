@@ -3,11 +3,13 @@ import './Product.css'
 import axios from 'axios'
 import male from "../../assets/imgs/male-avatar-boy-face-man-user-9.svg";
 import female from "../../assets/imgs/female-avatar-girl-face-woman-user-2.svg";
+import Modal from '../editModal/Modal';
 
 const Product = () => {
     const API_URL = 'http://localhost:3001/users'
     const [data,setData] = useState(null)
     const [reload,setReload] = useState(false)
+    const [edit,setEdit] = useState(null)
 
     useEffect(()=>{
     
@@ -31,26 +33,18 @@ const Product = () => {
         // })
         // .catch((err)=>console.log(err))
 
-        fetch(`${API_URL}/${id}`,{
+        if (window.confirm("Are you sure you want to delete this user?")) {
+            fetch(`${API_URL}/${id}`,{
             method:'DELETE'
         })
         .then((res)=>res.json())
         .then((data)=>setReload(p=>!p))
         .catch((err)=>console.log(err))
+        }
+        
     }
 
-    const handleEdit = (id)=>{
-        fetch(`${API_URL}/${id}`,{
-            method:'PATCH',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify((data))
-        })
-        .then((res)=>res.json())
-        .then((data)=>console.log(data))
-        .catch((err)=>console.log(err))
-    }
+
 
 
 
@@ -65,7 +59,7 @@ const Product = () => {
             </div>
             <div className='btn_container'>
                 <button onClick={()=>handleDelete(user.id)} className='button_delete'>Delete</button>
-                <button className='button_edit'>Edit</button>
+                <button onClick={()=>setEdit(user)} className='button_edit'>Edit</button>
             </div>
         </div>
     ))
@@ -76,6 +70,9 @@ const Product = () => {
              <div className='card_container'>
                  {user} 
              </div>
+             {
+                edit ?  <Modal reload={reload} setReload={setReload} edit={edit} setEdit={setEdit}/> : null
+             }
      </div>
     </>
   )

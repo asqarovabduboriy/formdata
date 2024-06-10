@@ -8,11 +8,13 @@ const Navbar = () => {
       <header>
           <div className="container wrapper">
             <div>
-              <h1>Lesson 4</h1>
+             <NavLink to="/">
+             <h1 >Lesson 4</h1>
+             </NavLink>
             </div>
             <ul>
               <NavLink to="/">
-                <li>Home</li>
+                <li className="home">Home</li>
               </NavLink>
               <NavLink to="/user">
                 <li>Create user</li>
