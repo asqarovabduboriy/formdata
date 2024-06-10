@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "Jane",
+      "gander": "female",
+      "age": 25
+    },
+    {
+      "id": 5,
+      "name": "Tom",
+      "gander": "male",
+      "age": 50
+    }
+  ]
+}
